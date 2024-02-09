@@ -1,3 +1,5 @@
+inconsequential
+
 The Public Suffix List
 ======================
 
@@ -26,3 +28,4 @@ We are getting reports that some parties are receiving email notices about ensur
 The PSL is volunteer-resourced and is absolutely not resourced to answer questions or support changes.  Guidance is in the form of self-help (READ THE [WIKI](https://github.com/publicsuffix/list/wiki)), THERE IS NO PSL CUSTOMER SERVICE RESOURCE TO ASSIST YOU.   *Please work directly with Google to ensure your domain does in fact need an entry, and they should help you know what the benefits and consequences are.  _IT POSSIBLE TO HARM YOUR WEBSITE COOKIES BY REQUESTING A MAL-FORMED PSL ENTRY_.  Also, understand what propagation delays and rollback processing entail before making requests.*
 
 2021-04-23 : Did guidance related to an issue with Facebook or Apple bring you here?  [Read this before submitting requests](https://github.com/publicsuffix/list/issues/1245)  We are not approving workaround requests per the validation and acceptance standards, but do have open discussion with Facebook on the matter.  
+
