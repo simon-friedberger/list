@@ -1,0 +1,22 @@
+name: psltool-fmt
+
+on:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "stable"
+      - name: run validations
+        run: |
+          cd tools
+          go run ./psltool fmt ../public_suffix_list.dat
+      - name: create PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: Automatic formatting using `psltool fmt`
