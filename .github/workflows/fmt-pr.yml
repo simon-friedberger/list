@@ -1,0 +1,32 @@
+name: fmt-pr
+
+on:
+  pull_request:
+
+permissions: write-all
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "stable"
+      - name: run validations
+        id: fmt
+        run: |
+          cd tools
+          if go run ./psltool fmt -d ../public_suffix_list.dat; then
+            echo 'msg="Nothing to format."' >> "$GITHUB_OUTPUT"
+          else
+            echo 'msg="Formatting needs to be fixed."' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: |
+            "Hello, world! :wave:"
+            "${{ steps.fmt.outputs.msg }}"
+
